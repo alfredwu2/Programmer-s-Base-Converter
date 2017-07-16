@@ -10,11 +10,50 @@ public class Decimal extends Number {
 	}
 
 	public Number convertToBinary() {
-		return null;
+		
+		Number conversion = new Binary();
+				
+		while (true) {
+			
+			int value = lastDigit.getValue() % 2;
+			
+			Digit newDigit = new Digit((char) ('0' + value));
+			
+			
+			
+			if (conversion.lastDigit == null) {
+				conversion.lastDigit = newDigit;
+			}
+			
+			if (conversion.firstDigit == null) {
+				conversion.firstDigit = newDigit;
+			} else {
+				conversion.firstDigit.leftDigit = newDigit;
+				newDigit.rightDigit = conversion.firstDigit;
+				conversion.firstDigit = newDigit;
+			}
+			
+			this.halve();
+			if (this.isZero()) {
+				break;
+			}
+
+		}
+		
+		
+		return conversion;
 	}
 
 	public Number convertToHex() {
 		return null;
+	}
+	
+	public boolean isZero() {
+		if (firstDigit == lastDigit && firstDigit.getValue() == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public void add(Decimal d) {
@@ -106,9 +145,12 @@ public class Decimal extends Number {
 		this.multiply(5);
 		
 		// then divide by 10
-		lastDigit = lastDigit.leftDigit;
-		lastDigit.rightDigit = null;
-		
+		if (lastDigit.leftDigit == null) {	// it means the number being halved was 1
+			lastDigit.setValue(0); 
+		} else {
+			lastDigit = lastDigit.leftDigit;
+			lastDigit.rightDigit = null;
+		}
 	}
 	
 }
