@@ -5,24 +5,25 @@ public class Main {
 	
 		Decimal decimal = new Decimal();
 		decimal.attach('9');
-		
-		Decimal decimal2 = new Decimal();
-		decimal2.attach('1');
-		decimal2.attach('9');
-		decimal2.attach('4');
-		
-		decimal.add(decimal2);
+		decimal.attach('5');
+		decimal.attach('0');
+		System.out.println(decimal);
+		decimal.halve();
 		System.out.println(decimal);
 		
 		/*
 		Number binary = new Binary();
 		binary.attach('1');
 		binary.attach('1');
-		binary.attach('0');
+		binary.attach('1');
 		binary.attach('1');
 		binary.attach('0');
-		binary.convertToDecimal();
+		binary.attach('0');
+		binary.attach('1');
+		
 		System.out.println(binary);
+		System.out.println(binary.convertToDecimal());
+		System.out.println(binary.convertToHex());
 		*/
 		
 	}

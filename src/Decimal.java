@@ -6,10 +6,6 @@ public class Decimal extends Number {
 	}
 
 	public Number convertToDecimal() {
-		for (Digit currentDigit = firstDigit; currentDigit != null; currentDigit = currentDigit.rightDigit) {
-			int currentValue = currentDigit.getValue();
-			currentDigit.setValue(currentValue * 3);
-		}
 		return this;
 	}
 
@@ -104,4 +100,15 @@ public class Decimal extends Number {
 		}
 		
 	}
+	
+	public void halve() {
+		// multiply by 5
+		this.multiply(5);
+		
+		// then divide by 10
+		lastDigit = lastDigit.leftDigit;
+		lastDigit.rightDigit = null;
+		
+	}
+	
 }

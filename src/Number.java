@@ -28,7 +28,7 @@ public abstract class Number {
 		String output = "";
 		
 		for (Digit currentDigit = firstDigit; currentDigit != null; currentDigit = currentDigit.rightDigit) {
-			output = output.concat(currentDigit.toString());
+			output = output.concat(" " + currentDigit.toString());
 		}
 		
 		return output;

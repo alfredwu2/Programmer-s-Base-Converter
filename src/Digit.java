@@ -6,7 +6,12 @@ public class Digit {
 	Digit leftDigit, rightDigit;
 	
 	Digit(char c) {
-		this.value = Character.getNumericValue(c);
+		
+		if (c >= 'a' && c <= 'f') {
+			this.value = c - 'a' + 10;
+		} else {
+			this.value = Character.getNumericValue(c);
+		}
 	}
 	
 	public int getValue() {
@@ -17,8 +22,12 @@ public class Digit {
 		this.value = newValue;
 	}
 	
-	public String toString() {		
-		return String.valueOf(value);
+	public String toString() {
+		if (value >= 10) {
+			return "" + (char) ('A' + value - 10);
+		} else {	
+			return String.valueOf(value);
+		}
 	}
 	
 }
