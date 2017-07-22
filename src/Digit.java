@@ -9,6 +9,8 @@ public class Digit {
 		
 		if (c >= 'a' && c <= 'f') {
 			this.value = c - 'a' + 10;
+		} else if (c >= 'A' && c <= 'F') {
+			this.value = c - 'A' + 10;
 		} else {
 			this.value = Character.getNumericValue(c);
 		}

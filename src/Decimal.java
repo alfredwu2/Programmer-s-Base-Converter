@@ -1,9 +1,5 @@
 
 public class Decimal extends Number {
-	
-	public Number convert() {
-		return null;
-	}
 
 	public Number convertToDecimal() {
 		return this;
@@ -45,7 +41,7 @@ public class Decimal extends Number {
 	}
 
 	public Number convertToHex() {
-		return null;
+		return this.convertToBinary().convertToHex();
 	}
 	
 	public boolean isZero() {

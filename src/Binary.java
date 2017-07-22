@@ -1,10 +1,6 @@
 
 public class Binary extends Number {
 
-	public Number convert() {
-		return null;
-	}
-
 	public Number convertToDecimal() {
 		
 		int power = 0;
@@ -81,6 +77,9 @@ public class Binary extends Number {
 		return conversion;
 	}
 	
+	public String toString() {
+		return "b" + super.toString();
+	}
 
 	
 }
