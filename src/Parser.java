@@ -7,7 +7,7 @@ public class Parser {
 	final static int HEXADECIMAL = 2;
 	
 	public Number parse(String input) {
-			
+				
 		String tokens[] = input.split(" ");		
 		
 		Number inputNumber;
@@ -29,7 +29,8 @@ public class Parser {
 			return null;
 		}
 		
-		if (tokens[0].substring(0, 1).equals("0x")) {
+		
+		if (tokens[0].substring(0, 2).equals("0x")) {
 			inputNumber = buildHexadecimal(tokens[0]);
 		} else if (tokens[0].charAt(0) == 'b') {
 			inputNumber = buildBinary(tokens[0]);
